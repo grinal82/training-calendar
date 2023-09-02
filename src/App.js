@@ -41,11 +41,12 @@ function App() {
       <h1>Учёт тренировок</h1>
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="date-container">
-          <label htmlFor="dateInput">Дата (ДД.ММ.ГГ):</label>
+          <label htmlFor="dateInput">Дата (ДД.ММ.ГГГГ):</label>
           <input
-            type="text"
+            type="date"
             id="dateInput"
             value={date}
+            name="date"
             onChange={(e) => setDate(e.target.value)}
             pattern="\d{2}\.\d{2}\.\d{4}"
             required
@@ -56,6 +57,7 @@ function App() {
           <input
             type="number"
             id="distanceInput"
+            name = "distance"
             value={distance}
             onChange={(e) => setDistance(e.target.value)}
             required
