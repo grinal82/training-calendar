@@ -48,7 +48,7 @@ function App() {
             value={date}
             name="date"
             onChange={(e) => setDate(e.target.value)}
-            pattern="\d{2}\.\d{2}\.\d{4}"
+            pattern="\d{2}\-\d{2}\-\d{4}"
             required
           />
         </div>
@@ -79,7 +79,7 @@ function App() {
           <tbody>
             {data.map((item) => (
               <tr key={item.date}>
-                <td>{item.date}</td>
+                <td>{item.date.split("-").reverse().join("-")}</td>
                 <td>{item.distance}</td>
                 <td>
                   <button onClick={() => handleDelete(item.date)}>✘</button>
